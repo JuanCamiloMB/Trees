@@ -21,10 +21,14 @@ class Tree:
     def rightHeight(self, root):
         return self.height(root.right_child)
 
-    def isBalanced(self, root = self.root):
-        if (self.leftHeight(root) - self.rightHeight(root)) in [-1, 0, 1]:
+    def Balance(self, root = self.root):
+        if root == None:
             return True
-        return False
+        left_height = self.leftHeight(root.left)
+        right_height = self.rightHeight(root.right)
+        if left_height - right_height not in [-1, 0, 1]:
+            return False
+        return self.Balance(root.left) and Balance(root.right)
 
     def byArray(self, array, root, contador = 0):
         if len(array) > 0:
