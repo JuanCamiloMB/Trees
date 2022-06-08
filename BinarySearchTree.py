@@ -58,3 +58,13 @@ class Tree:
             
                 else:
                     self.byArray(array, root.left)
+
+    def Lleno(self, root = self.root):
+        if root == None:
+            return True
+
+        if (root.left == None and root.right != None) or (root.left != None and root.right == None):
+            return False
+
+        if ((root.left != None) and (root.right != None)) or ((root.left == None) and (root.rigth == None)):
+            return self.Lleno(root.left) and self.Lleno(root.right)
