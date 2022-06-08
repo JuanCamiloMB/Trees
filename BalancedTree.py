@@ -30,16 +30,6 @@ class Tree:
             return False
         return self.Balance(root.left) and Balance(root.right)
 
-    def isBinarySearch(self, root = self.root):
-        if root == None:
-            return True
-
-        if (root.right.data < root.data) or (root.left.data > root.data):
-            return False
-
-        return self.isBinarySearch(root.left) and self.isBinarySearch(root.right)
-        
-
     def byArray(self, array, root, contador = 0):
         if len(array) > 0:
             if contador == 0:
