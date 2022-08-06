@@ -28,7 +28,7 @@ class Tree:
         right_height = self.rightHeight(root.right)
         if left_height - right_height not in [-1, 0, 1]:
             return False
-        return self.Balance(root.left) and Balance(root.right)
+        return self.Balance(root.left) and self.Balance(root.right)
 
     def isBinarySearch(self, root = self.root):
         if root == None:
